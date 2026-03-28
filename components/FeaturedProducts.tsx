@@ -35,14 +35,14 @@ export default function FeaturedProducts() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-[#131A1A]">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#F9F0E2] tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
             Featured Products
           </h2>
-          <p className="text-lg text-[#F9F0E2]/70">
+          <p className="text-lg text-gray-600">
             Our most popular wellness resources
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function FeaturedProducts() {
         <div className="text-center">
           <a
             href="/shop"
-            className="inline-block bg-transparent border border-[#F9F0E2] text-[#F9F0E2] hover:bg-white/5 font-semibold py-3 px-8 rounded-lg transition-all"
+            className="inline-block bg-sage hover:bg-sage/90 text-white font-semibold py-3 px-8 rounded-lg transition-all hover:shadow-soft-md"
           >
             View All Products
           </a>

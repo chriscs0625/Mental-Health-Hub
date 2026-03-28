@@ -28,7 +28,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
   ]
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#131A1A]">
+    <div className="min-h-screen flex flex-col bg-warmWhite">
       <Navbar />
 
       <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
@@ -42,19 +42,19 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
             {/* Mobile Close Button */}
             <button
               onClick={() => setSidebarOpen(false)}
-              className="md:hidden mb-4 text-[#F9F0E2]"
+              className="md:hidden mb-4 text-navy"
             >
               <X size={24} />
             </button>
 
-            <div className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[12px] p-6 sticky top-24">
+            <div className="bg-white rounded-2xl p-6 sticky top-24">
               {/* User Profile */}
-              <div className="mb-8 pb-8 border-b border-[rgba(249,240,226,0.1)]">
-                <div className="w-12 h-12 bg-[#F04915] rounded-full flex items-center justify-center text-[#F9F0E2] font-bold mb-3">
+              <div className="mb-8 pb-8 border-b border-gray-200">
+                <div className="w-12 h-12 bg-sage rounded-full flex items-center justify-center text-white font-bold mb-3">
                   JD
                 </div>
-                <h3 className="font-semibold text-[#F9F0E2]">John Doe</h3>
-                <p className="text-sm text-[#F9F0E2]/60">john@example.com</p>
+                <h3 className="font-semibold text-navy">John Doe</h3>
+                <p className="text-sm text-gray-600">john@example.com</p>
               </div>
 
               {/* Navigation */}
@@ -66,7 +66,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
                       key={item.href}
                       href={item.href}
                       onClick={() => setSidebarOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-[#F9F0E2]/80 hover:bg-white/5 hover:text-[#F9F0E2] transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
                     >
                       <Icon size={18} />
                       <span className="font-medium">{item.label}</span>
@@ -76,7 +76,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
               </nav>
 
               {/* Logout */}
-              <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-[#F04915] hover:bg-[#F04915]/10 transition-colors font-medium">
+              <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-coral hover:bg-coral/10 transition-colors font-medium">
                 <LogOut size={18} />
                 <span>Logout</span>
               </button>
@@ -88,7 +88,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setSidebarOpen(true)}
-              className="md:hidden mb-4 p-2 text-[#F9F0E2]"
+              className="md:hidden mb-4 p-2 text-navy"
             >
               <Menu size={24} />
             </button>

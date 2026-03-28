@@ -49,30 +49,27 @@ export default function ProductCard({
   return (
     <div className="group h-full">
       <Link href={`/product/${id}`}>
-        <div 
-          className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[24px] cursor-pointer h-full flex flex-col p-2 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(0,0,0,0.4)]"
-          style={{ transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}
-        >
+        <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
           {/* Product Image */}
-          <div className="relative h-56 w-full rounded-[12px] overflow-hidden group-hover:opacity-95 transition-all">
+          <div className="relative h-56 bg-white overflow-hidden group-hover:opacity-95 transition-all">
             <img 
               src={getProductImage(id)} 
               alt={name}
-              className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Content */}
-          <div className="p-4 flex flex-col flex-1">
+          <div className="p-6 flex flex-col flex-1">
             {/* Category Badge */}
             <div className="inline-flex w-fit mb-3">
-              <span className="text-xs font-semibold px-3 py-1 bg-[#F04915]/10 text-[#F04915] rounded-full border border-[#F04915]/20">
+              <span className="text-xs font-semibold px-3 py-1 bg-[#7CAF7F]/10 text-[#7CAF7F] rounded-full">
                 {category}
               </span>
             </div>
 
             {/* Title */}
-            <h3 className="font-bold text-lg text-[#F9F0E2] mb-2 line-clamp-2">{name}</h3>
+            <h3 className="font-bold text-lg text-[#1B2B4B] mb-2 line-clamp-2">{name}</h3>
 
             {/* Rating */}
             <div className="flex items-center gap-2 mb-3">
@@ -81,23 +78,23 @@ export default function ProductCard({
                   <Star
                     key={i}
                     size={14}
-                    className={i < Math.floor(rating) ? 'fill-[#F04915] text-[#F04915]' : 'text-gray-600'}
+                    className={i < Math.floor(rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
                   />
                 ))}
               </div>
-              <span className="text-xs text-[#F9F0E2]/60">({reviewCount})</span>
+              <span className="text-xs text-gray-600">({reviewCount})</span>
             </div>
 
             {/* Price */}
             <div className="mb-4 mt-auto">
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-bold text-[#F9F0E2]">${price.toFixed(2)}</span>
+                <span className="text-2xl font-bold text-[#1B2B4B]">${price.toFixed(2)}</span>
                 {originalPrice && (
-                  <span className="text-sm text-[#F9F0E2]/40 line-through">${originalPrice.toFixed(2)}</span>
+                  <span className="text-sm text-gray-400 line-through">${originalPrice.toFixed(2)}</span>
                 )}
               </div>
               {originalPrice && (
-                <p className="text-xs text-[#F04915] font-semibold mt-1">
+                <p className="text-xs text-[#7CAF7F] font-semibold mt-1">
                   Save ${(originalPrice - price).toFixed(2)}
                 </p>
               )}
@@ -109,7 +106,7 @@ export default function ProductCard({
                 e.preventDefault()
                 handleBuyNow()
               }}
-              className="w-full bg-[#131A1A] border border-[rgba(249,240,226,0.1)] group-hover:bg-[#F04915] group-hover:border-[#F04915] text-[#F9F0E2] font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
+              className="w-full bg-[#E8826A] hover:bg-[#E8826A]/90 text-white font-bold py-2 rounded-lg transition-all flex items-center justify-center gap-2"
             >
               <ShoppingCart size={18} />
               Get Instant Access

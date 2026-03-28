@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Lock, Lock as LockIcon } from 'lucide-react'
 
-function CheckoutContent() {
+export default function CheckoutPage() {
   const searchParams = useSearchParams()
   const productId = searchParams.get('product') || '1'
   const productName = searchParams.get('name') || 'Digital Wellness Product'
@@ -59,20 +59,20 @@ function CheckoutContent() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#131A1A]">
+    <div className="min-h-screen flex flex-col bg-warmWhite">
       <Navbar />
 
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-extrabold text-[#F9F0E2] tracking-tight mb-2">Checkout</h1>
-        <p className="text-[#F9F0E2]/60 mb-12">Complete your purchase securely</p>
+        <h1 className="text-4xl font-bold text-navy mb-2">Checkout</h1>
+        <p className="text-gray-600 mb-12">Complete your purchase securely</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left: Form */}
           <form onSubmit={handleSubmit} className="md:col-span-2">
-            <div className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[12px] p-8 mb-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+            <div className="bg-white rounded-2xl p-8 mb-8">
               {/* Email */}
-              <div className="mb-8">
-                <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-navy mb-2">
                   Email Address
                 </label>
                 <input
@@ -81,13 +81,13 @@ function CheckoutContent() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors placeholder:text-[#F9F0E2]/20"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
                 />
               </div>
 
               {/* Full Name */}
-              <div className="mb-10">
-                <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
+              <div className="mb-8">
+                <label className="block text-sm font-semibold text-navy mb-2">
                   Full Name
                 </label>
                 <input
@@ -96,17 +96,17 @@ function CheckoutContent() {
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="John Doe"
                   required
-                  className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors placeholder:text-[#F9F0E2]/20"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
                 />
               </div>
 
               {/* Card Details */}
-              <div className="mb-10 pt-4 border-t border-[rgba(249,240,226,0.05)]">
-                <h3 className="text-[11px] uppercase tracking-widest font-bold text-[#F9F0E2] mb-6">Payment Details</h3>
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-navy mb-4">Payment Details</h3>
 
                 {/* Card Number */}
-                <div className="mb-8">
-                  <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
+                <div className="mb-4">
+                  <label className="block text-sm font-semibold text-navy mb-2">
                     Card Number
                   </label>
                   <input
@@ -120,14 +120,14 @@ function CheckoutContent() {
                     placeholder="4111 1111 1111 1111"
                     maxLength={19}
                     required
-                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors font-mono tracking-widest placeholder:text-[#F9F0E2]/20"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage font-mono"
                   />
                 </div>
 
                 {/* Expiry & CVC */}
-                <div className="grid grid-cols-2 gap-8 mb-6">
+                <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
+                    <label className="block text-sm font-semibold text-navy mb-2">
                       Expiry Date
                     </label>
                     <input
@@ -142,11 +142,11 @@ function CheckoutContent() {
                       placeholder="MM/YY"
                       maxLength={5}
                       required
-                      className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors font-mono tracking-widest placeholder:text-[#F9F0E2]/20"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage font-mono"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
+                    <label className="block text-sm font-semibold text-navy mb-2">
                       CVC
                     </label>
                     <input
@@ -156,28 +156,28 @@ function CheckoutContent() {
                       placeholder="123"
                       maxLength={4}
                       required
-                      className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors font-mono tracking-widest placeholder:text-[#F9F0E2]/20"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage font-mono"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Promo Code */}
-              <div className="mb-10 pt-4 border-t border-[rgba(249,240,226,0.05)]">
-                <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-3">
+              <div className="mb-8 p-4 bg-sage/10 rounded-lg">
+                <label className="block text-sm font-semibold text-navy mb-2">
                   Promo Code (Optional)
                 </label>
-                <div className="flex gap-4">
+                <div className="flex gap-2">
                   <input
                     type="text"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
-                    placeholder="Enter code (WELLNESS10)"
-                    className="flex-1 px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors placeholder:text-[#F9F0E2]/20"
+                    placeholder="Enter code (WELLNESS10 for 10% off)"
+                    className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
                   />
                   <button
                     type="button"
-                    className="px-6 py-2 bg-transparent border border-[#F9F0E2]/30 text-[#F9F0E2] text-xs uppercase tracking-wider rounded-[4px] font-semibold hover:bg-white/5 transition-colors"
+                    className="px-4 py-3 bg-sage text-white rounded-lg font-semibold hover:bg-sage/90 transition-colors"
                   >
                     Apply
                   </button>
@@ -188,42 +188,42 @@ function CheckoutContent() {
               <button
                 type="submit"
                 disabled={isProcessing}
-                className="w-full bg-[#F04915] hover:bg-[#F04915]/90 disabled:opacity-70 text-[#F9F0E2] font-semibold tracking-wide py-4 object-none rounded-[4px] transition-all flex items-center justify-center gap-2 uppercase text-sm"
+                className="w-full bg-coral hover:bg-coral/90 disabled:opacity-70 text-white font-semibold py-4 rounded-lg transition-all hover:shadow-soft-lg flex items-center justify-center gap-2"
               >
                 {isProcessing ? 'Processing...' : 'Complete Purchase'}
               </button>
 
               {/* Security Badge */}
-              <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#F9F0E2]/40 tracking-wider">
-                <LockIcon size={14} />
-                256-BIT SSL SECURED
+              <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-600">
+                <LockIcon size={16} />
+                256-bit SSL Secured
               </div>
             </div>
           </form>
 
           {/* Right: Order Summary */}
           <div>
-            <div className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[12px] p-6 sticky top-24 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
-              <h3 className="text-[11px] uppercase tracking-widest font-bold text-[#F9F0E2] mb-6">Order Summary</h3>
+            <div className="bg-white rounded-2xl p-6 sticky top-24">
+              <h3 className="text-lg font-semibold text-navy mb-6">Order Summary</h3>
 
               {/* Items */}
-              <div className="mb-6 space-y-4 pb-6 border-b border-[rgba(249,240,226,0.1)]">
+              <div className="mb-6 space-y-4 pb-6 border-b border-gray-200">
                 {cartItems.map((item) => (
                   <div key={item.id} className="flex gap-4">
-                    <div className="w-16 h-16 bg-[#131A1A] rounded-[8px] overflow-hidden flex-shrink-0 border border-[rgba(249,240,226,0.1)]">
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
                       <Image
                         src={item.image}
                         alt={item.name}
-                        width={64}
-                        height={64}
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="flex-1 py-1">
-                      <p className="font-semibold text-[#F9F0E2] text-sm mb-1 leading-tight">
+                    <div className="flex-1">
+                      <p className="font-semibold text-navy text-sm mb-2">
                         {item.name}
                       </p>
-                      <p className="text-[#F04915] font-bold text-sm">
+                      <p className="text-coral font-bold">
                         ${item.price.toFixed(2)}
                       </p>
                     </div>
@@ -234,31 +234,31 @@ function CheckoutContent() {
               {/* Pricing */}
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#F9F0E2]/60">Subtotal</span>
-                  <span className="font-semibold text-[#F9F0E2]">
+                  <span className="text-gray-600">Subtotal</span>
+                  <span className="font-semibold text-navy">
                     ${subtotal.toFixed(2)}
                   </span>
                 </div>
                 {discount > 0 && (
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#7CAF7F]">Discount</span>
-                    <span className="font-semibold text-[#7CAF7F]">
+                    <span className="text-green-600">Discount</span>
+                    <span className="font-semibold text-green-600">
                       -${discount.toFixed(2)}
                     </span>
                   </div>
                 )}
-                <div className="flex justify-between py-4 border-t border-[rgba(249,240,226,0.1)] mt-2">
-                  <span className="font-semibold text-[#F9F0E2] uppercase tracking-widest text-[11px] flex items-center">Total</span>
-                  <span className="text-2xl font-bold text-[#F04915]">
+                <div className="flex justify-between py-3 border-t border-gray-200 pt-3">
+                  <span className="font-semibold text-navy">Total</span>
+                  <span className="text-2xl font-bold text-coral">
                     ${total.toFixed(2)}
                   </span>
                 </div>
               </div>
 
               {/* Payment Methods */}
-              <div className="text-[10px] text-[#F9F0E2]/30 text-center uppercase tracking-widest">
+              <div className="text-xs text-gray-500 text-center">
                 <p className="mb-2">We accept</p>
-                <p className="flex justify-center gap-3 flex-wrap">
+                <p className="flex justify-center gap-2 flex-wrap">
                   <span>Visa</span>
                   <span>•</span>
                   <span>Mastercard</span>
@@ -275,13 +275,5 @@ function CheckoutContent() {
 
       <Footer />
     </div>
-  )
-}
-
-export default function CheckoutPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-[#131A1A] text-[#F9F0E2] flex items-center justify-center">Loading...</div>}>
-      <CheckoutContent />
-    </Suspense>
   )
 }
