@@ -4,74 +4,74 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #1B2B4B;
-  --card: #FFFFFF;
-  --card-foreground: #1B2B4B;
-  --popover: #FFFFFF;
-  --popover-foreground: #1B2B4B;
-  --primary: #7CAF7F;
+  --background: #131A1A;
+  --foreground: #F9F0E2;
+  --card: #131A1A;
+  --card-foreground: #F9F0E2;        
+  --popover: #131A1A;
+  --popover-foreground: #F9F0E2;     
+  --primary: #F04915;
   --primary-foreground: #FFFFFF;
-  --secondary: #A89BC2;
-  --secondary-foreground: #FFFFFF;
-  --muted: #E8E8E8;
-  --muted-foreground: #666666;
-  --accent: #E8826A;
+  --secondary: transparent;
+  --secondary-foreground: #F9F0E2;
+  --muted: #2A3F5F;
+  --muted-foreground: #A89BC2;
+  --accent: #F04915;
   --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #E8E8E8;
-  --input: #FFFFFF;
-  --ring: #7CAF7F;
-  --chart-1: #7CAF7F;
+  --border: rgba(249, 240, 226, 0.1);
+  --input: transparent;
+  --ring: #F04915;
+  --chart-1: #F04915;
   --chart-2: #A89BC2;
   --chart-3: #E8826A;
   --chart-4: #1B2B4B;
   --chart-5: #FFF4E6;
-  --radius: 1rem;
-  --sidebar: #1B2B4B;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #7CAF7F;
+  --radius: 12px;
+  --sidebar: #131A1A;
+  --sidebar-foreground: #F9F0E2;
+  --sidebar-primary: #F04915;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #A89BC2;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #2A3F5F;
-  --sidebar-ring: #7CAF7F;
+  --sidebar-border: rgba(249, 240, 226, 0.1);
+  --sidebar-ring: #F04915;
 }
 
 .dark {
-  --background: #0F1620;
-  --foreground: #F5F5F5;
-  --card: #1B2B4B;
-  --card-foreground: #F5F5F5;
-  --popover: #1B2B4B;
-  --popover-foreground: #F5F5F5;
-  --primary: #7CAF7F;
-  --primary-foreground: #0F1620;
-  --secondary: #A89BC2;
-  --secondary-foreground: #0F1620;
+  --background: #131A1A;
+  --foreground: #F9F0E2;
+  --card: #131A1A;
+  --card-foreground: #F9F0E2;
+  --popover: #131A1A;
+  --popover-foreground: #F9F0E2;
+  --primary: #F04915;
+  --primary-foreground: #FFFFFF;
+  --secondary: transparent;
+  --secondary-foreground: #F9F0E2;
   --muted: #2A3F5F;
   --muted-foreground: #AAAAAA;
-  --accent: #E8826A;
+  --accent: #F04915;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #2A3F5F;
-  --input: #2A3F5F;
-  --ring: #7CAF7F;
-  --chart-1: #7CAF7F;
+  --border: rgba(249, 240, 226, 0.1);
+  --input: transparent;
+  --ring: #F04915;
+  --chart-1: #F04915;
   --chart-2: #A89BC2;
   --chart-3: #E8826A;
   --chart-4: #FFFFFF;
   --chart-5: #FFF4E6;
-  --sidebar: #0F1620;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #7CAF7F;
+  --sidebar: #131A1A;
+  --sidebar-foreground: #F9F0E2;
+  --sidebar-primary: #F04915;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #A89BC2;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #2A3F5F;
-  --sidebar-ring: #7CAF7F;
+  --sidebar-border: rgba(249, 240, 226, 0.1);
+  --sidebar-ring: #F04915;
 }
 
 @theme inline {
@@ -151,7 +151,12 @@
 .shadow-soft-lg { @apply shadow-[0_10px_15px_-3px_rgb(0_0_0_/0.1)]; }
 
 /* Glass morphism */
-.bg-glass { @apply bg-white/30 backdrop-blur-md; }
+.bg-glass {
+  background-color: rgba(249, 240, 226, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(249, 240, 226, 0.1);
+}
 .shadow-glass { @apply shadow-[0_8px_32px_0_rgba(31,38,135,0.17)]; }
 
 /* Animation utilities */

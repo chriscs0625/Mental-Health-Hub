@@ -32,23 +32,23 @@ export default function SettingsPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-navy mb-2">Account Settings</h1>
-        <p className="text-gray-600">
+        <h1 className="text-3xl font-extrabold tracking-tight text-[#F9F0E2] mb-2">Account Settings</h1>
+        <p className="text-[#F9F0E2]/60">
           Manage your account information and preferences
         </p>
       </div>
 
       <div className="space-y-8">
         {/* Account Information */}
-        <div className="bg-white rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-navy mb-6">
+        <div className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[12px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+          <h2 className="text-[11px] uppercase tracking-widest font-bold text-[#F9F0E2] mb-8">
             Account Information
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-8">
             {/* Full Name */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 Full Name
               </label>
               <input
@@ -56,13 +56,13 @@ export default function SettingsPage() {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 Email Address
               </label>
               <input
@@ -70,13 +70,13 @@ export default function SettingsPage() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors"
               />
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 Phone Number
               </label>
               <input
@@ -84,20 +84,20 @@ export default function SettingsPage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors"
               />
             </div>
 
             {/* Country */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 Country
               </label>
               <select
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-[#131A1A] border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors appearance-none"
               >
                 <option>United States</option>
                 <option>Canada</option>
@@ -108,16 +108,16 @@ export default function SettingsPage() {
             </div>
 
             {/* Save Button */}
-            <div className="flex items-center gap-3 pt-4">
+            <div className="flex items-center gap-4 pt-4 border-t border-[rgba(249,240,226,0.05)] mt-4">
               <button
                 type="submit"
-                className="bg-sage hover:bg-sage/90 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center gap-2"
+                className="bg-[#F04915] hover:bg-[#F04915]/90 text-[#F9F0E2] text-sm uppercase tracking-wide font-semibold py-3 px-8 rounded-[4px] transition-colors flex items-center justify-center gap-2"
               >
-                <Save size={18} />
+                <Save size={16} />
                 Save Changes
               </button>
               {saved && (
-                <span className="text-green-600 font-semibold text-sm">
+                <span className="text-[#7CAF7F] font-medium text-sm tracking-wide">
                   Changes saved successfully ✓
                 </span>
               )}
@@ -126,61 +126,63 @@ export default function SettingsPage() {
         </div>
 
         {/* Password & Security */}
-        <div className="bg-white rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-navy mb-6">
+        <div className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[12px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+          <h2 className="text-[11px] uppercase tracking-widest font-bold text-[#F9F0E2] mb-8">
             Password & Security
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {/* Current Password */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 Current Password
               </label>
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors placeholder:text-[#F9F0E2]/20"
               />
             </div>
 
             {/* New Password */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 New Password
               </label>
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors placeholder:text-[#F9F0E2]/20"
               />
             </div>
 
             {/* Confirm Password */}
             <div>
-              <label className="block text-sm font-semibold text-navy mb-2">
+              <label className="block text-[11px] uppercase tracking-widest font-normal text-[#F9F0E2]/60 mb-1">
                 Confirm New Password
               </label>
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b border-[rgba(249,240,226,0.2)] focus:outline-none focus:ring-0 focus:border-[#F04915] text-[#F9F0E2] transition-colors placeholder:text-[#F9F0E2]/20"
               />
             </div>
 
-            <button className="bg-sage hover:bg-sage/90 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
-              Update Password
-            </button>
+            <div className="pt-4 border-t border-[rgba(249,240,226,0.05)]">
+              <button className="bg-transparent border border-[#F9F0E2]/30 hover:bg-white/5 text-[#F9F0E2] text-xs uppercase tracking-wider font-semibold py-3 px-6 rounded-[4px] transition-colors">
+                Update Password
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Email Preferences */}
-        <div className="bg-white rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-navy mb-6">
+        <div className="bg-glass border border-[rgba(249,240,226,0.1)] rounded-[12px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+          <h2 className="text-[11px] uppercase tracking-widest font-bold text-[#F9F0E2] mb-6">
             Email Preferences
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             {[
               {
                 title: 'Marketing emails',
@@ -195,15 +197,15 @@ export default function SettingsPage() {
                 desc: 'Helpful tips on how to use your wellness resources',
               },
             ].map((pref, index) => (
-              <label key={index} className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+              <label key={index} className="flex items-center gap-4 p-4 hover:bg-white/5 rounded-[8px] cursor-pointer transition-colors border border-transparent hover:border-[#F9F0E2]/10">
                 <input
                   type="checkbox"
                   defaultChecked={index < 2}
-                  className="w-4 h-4 rounded accent-sage cursor-pointer"
+                  className="w-4 h-4 rounded-[4px] accent-[#F04915] cursor-pointer"
                 />
                 <div>
-                  <p className="font-semibold text-navy text-sm">{pref.title}</p>
-                  <p className="text-xs text-gray-600">{pref.desc}</p>
+                  <p className="font-semibold text-[#F9F0E2] text-[13px]">{pref.title}</p>
+                  <p className="text-xs text-[#F9F0E2]/60">{pref.desc}</p>
                 </div>
               </label>
             ))}
@@ -211,16 +213,16 @@ export default function SettingsPage() {
         </div>
 
         {/* Danger Zone */}
-        <div className="bg-red-50 rounded-2xl p-8 border border-red-200">
-          <h2 className="text-xl font-semibold text-red-700 mb-4">
+        <div className="bg-glass border border-red-500/20 rounded-[12px] p-8">
+          <h2 className="text-[11px] uppercase tracking-widest font-bold text-red-500 mb-4">
             Danger Zone
           </h2>
 
-          <p className="text-sm text-gray-600 mb-6">
+          <p className="text-[13px] text-[#F9F0E2]/60 mb-6">
             Once you delete your account, there is no going back. Please be certain.
           </p>
 
-          <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+          <button className="bg-transparent border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-[4px] text-xs uppercase tracking-wider transition-colors">
             Delete Account
           </button>
         </div>
